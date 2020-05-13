@@ -17,7 +17,7 @@ init();
 
 function optionChanged(newSample) {
   buildMetadata(newSample);
-  buildCharts(newSample);
+  //buildCharts(newSample);
 }
 
 function buildMetadata(sample) {
