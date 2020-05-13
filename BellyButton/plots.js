@@ -30,7 +30,7 @@ function buildMetadata(sample) {
     PANEL.html("");
     PANEL.append("h6").text(
 
-      Object.entries(result).forEach(([key, value]) =>(`${key}:${value}`))
+      Object.entries(result)//.forEach(([key, value]) =>(`${key}:${value}`))
 
     );
   });
