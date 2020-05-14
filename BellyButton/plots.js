@@ -11,29 +11,32 @@ function init() {
         .text(sample)
         .property("value", sample);
     });
-})}
+  })
+}
 
 init();
 optionChanged(940);
 
 function optionChanged(newSample) {
   buildMetadata(newSample);
-  //buildCharts(newSample);
+  buildCharts(newSample);
 }
 
 function buildMetadata(sample) {
+  
   d3.json("samples.json").then((data) => {
     var metadata = data.metadata;
     var resultArray = metadata.filter(sampleObj => sampleObj.id == sample);
     var result = resultArray[0];
     var PANEL = d3.select("#sample-metadata");
 
+//Populate panel with subject's attributes
     PANEL.html("");
     Object.entries(result).forEach(([key, value]) =>{
       PANEL.append("h6").text(key + " : " + value);
     });
    
-    
+//Create wfreq Gauge
     var gaugedata = [
       {
         type: "indicator",
@@ -57,7 +60,7 @@ function buildMetadata(sample) {
     
     var layout = {
 
-      margin: { t: 25, r: 25, l: 25, b: 25 },
+      margin: { t: 10, r: 10, l: 10, b: 10 },
       font: {  family: "Arial" }
     };
     
@@ -80,36 +83,36 @@ function buildCharts(sample){
   
 
 
-// Sort the data array using the greekSearchResults value
+// Sort the data array using the sample_values
     result.sample_values.sort(function(a, b) {
       return parseFloat(b) - parseFloat(a);
     });
 
-// Trace1 for the bar chart
+// Create the bar chart
     var trace1 = {
-      x: result.sample_values.slice(0, 10).reverse(),//map(row => row.sample_values),
-      y: result.otu_ids.map(id=>`OTU ${id}`).slice(0, 10).reverse(),//map(row => row.otu_labels),
-      text: result.otu_labels.slice(0, 10).reverse(),//map(row => row.otu_labels),
+      x: result.sample_values.slice(0, 10).reverse(),
+      y: result.otu_ids.map(id=>`OTU ${id}`).slice(0, 10).reverse(),
+      text: result.otu_labels.slice(0, 10).reverse(),
       type: "bar",
       marker:{colorscale: 'Portland',
-      color: result.sample_values.slice(0, 10).reverse()},//'rgb(242, 193, 124)',
+      color: result.sample_values.slice(0, 10).reverse()},
       orientation: "h",
       opacity: 0.6
     };
 
-// data
+
     var bardata = [trace1];
 
-// Apply the group bar mode to the layout
+
     var layout = {
       xaxis: { title:{text:'Counts'},},
       margin: {l: 100, r: 100, t: 100, b: 100},
       font: {  family: "Arial" }
     };
 
-// Render the plot to the div tag with id "plot"
     Plotly.newPlot("bar", bardata, layout);
 
+// Create the bubble chart
     var trace2 = {
       x: result.otu_ids,
       y: result.sample_values,
@@ -132,9 +135,6 @@ function buildCharts(sample){
     };
     
     Plotly.newPlot('bubble', bubbledata, layout);
-
-
-
 
 
   });
