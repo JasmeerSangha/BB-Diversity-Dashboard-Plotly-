@@ -14,7 +14,7 @@ Created a webapp which creates dynamic visualisations of belly button bacterial 
 - Packages: Plotly, D3.js, Bootstrap4
 
 ## Results
-![Sample image](https://github.com/JasmeerSangha/Plotly/blob/master/BellyButton/webapp%20sample%20image.png)
+![Sample image](https://github.com/JasmeerSangha/Plotly/blob/master/BellyButton/websitepreview.png)
 The website can be found [here.](https://jasmeersangha.github.io/Plotly/BellyButton/)
 ### Future Analysis ###
 Though interesting, the colour scales for the bubble and bar graph are purely cosmetic and not informational. Further analysis could be done to compare different IDs to eachother. By using the demographics information, one could compare types and counts of bacteria found in people of different sex, race and/or location. Plotly would be an excellent tool for these more complex analyses visualisations rather than beautifying simple plots. 
