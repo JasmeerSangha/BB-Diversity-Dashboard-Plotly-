@@ -47,11 +47,12 @@ function buildMetadata(sample) {
           axis: { range: [null, 10]},
           bar: { color: "rgb(122, 171, 255)"},
           steps: [
-            { range: [-0.5, 2.5], color: 'rgb(250, 198, 130)' },
+            { range: [0, .5], color: 'rgb(250, 150, 130)' },
+            { range: [.5, 2.5], color: 'rgb(250, 198, 130)' },
             { range: [2.5,4.5], color: "rgb(250, 230, 130)" },
             { range: [4.5,6.5], color: "rgb(226, 250, 130)" },
             { range: [6.5,8.5], color: "rgb(178, 250, 130)" },
-            { range: [8.5,10.5], color: "rgb(178, 250, 215)"}
+            { range: [8.5,10], color: "rgb(178, 250, 215)"}
           ],
           
         }
@@ -59,9 +60,7 @@ function buildMetadata(sample) {
     ];
     
     var layout = {
-
-      margin: { t: 10, r: 10, l: 10, b: 10 },
-      font: {  family: "Arial" }
+      font: { family: "Arial" }
     };
     
     Plotly.newPlot('gauge', gaugedata, layout);
@@ -70,7 +69,6 @@ function buildMetadata(sample) {
 
   });
 }
-
 
 
 function buildCharts(sample){
@@ -106,7 +104,7 @@ function buildCharts(sample){
 
     var layout = {
       xaxis: { title:{text:'Counts'},},
-      margin: {l: 100, r: 100, t: 100, b: 100},
+      //margin: {l: 100, r: 100, t: 100, b: 100},
       font: {  family: "Arial" }
     };
 
