@@ -8,7 +8,7 @@ Created a webapp which creates dynamic visualisations of belly button bacterial 
 4.  Create a bubble chart showing all bacteria found in the belly button and their counts. The size of the bubbles mirror the values found on the y-axis, representing the counts of each bacterium from gathered samples.
 
 ## Resources
-- Data Sources: [astrogeology](https://astrogeology.usgs.gov/), [mars news](https://mars.nasa.gov/news/), [jpl](https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars), [space facts](http://space-facts.com/mars/)
+- Data Sources: [samples.json](https://github.com/JasmeerSangha/Plotly/edit/master/BellyButton/samples.json)
 - Software/Tools: Jupyter Lab, VSCode
 - Languages: Python 3, HTML5, CSS
 - Packages: Bootstrap 4, Flask, splinter, pandas
