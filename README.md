@@ -14,6 +14,6 @@ Created a webapp which creates dynamic visualisations of belly button bacterial 
 - Packages: Plotly, D3.js, Bootstrap4
 
 ## Results
-[Sample image](https://github.com/JasmeerSangha/Plotly/blob/master/BellyButton/webapp%20sample%20image.png)
+![Sample image](https://github.com/JasmeerSangha/Plotly/blob/master/BellyButton/webapp%20sample%20image.png)
 ### Future Analysis ###
 More work can go into organizing the information and storing it rather than replacing all past information with the most recent pieces of news.
