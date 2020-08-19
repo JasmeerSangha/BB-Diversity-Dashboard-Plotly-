@@ -1,4 +1,4 @@
-# Plotly
+# Plotly Summary
 
 ## Overview & Usage
 Created a webapp which creates dynamic visualisations of belly button bacterial data. By selecting an id inside the drop down menuthe app will:
